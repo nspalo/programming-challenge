@@ -7,7 +7,7 @@
     >
     <testsuites>
         <testsuite name="Test Armstrong Numbers">
-            <directory>tests/ArmstrongNumbers</directory>
+            <directory>tests/ArmstrongNumbers/unit</directory>
         </testsuite>
     </testsuites>
 </phpunit>
