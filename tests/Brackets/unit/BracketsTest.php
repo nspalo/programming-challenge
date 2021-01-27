@@ -6,10 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Brackets\Bracket;
 
 /**
- * Class TestBrackets
+ * Class BracketsTest
  * @package Brackets\unit
  */
-class TestBrackets extends TestCase
+class BracketsTest extends TestCase
 {
     /**
      * @var Bracket
@@ -27,7 +27,7 @@ class TestBrackets extends TestCase
     }
 
     /**
-     * TestBrackets constructor.
+     * BracketsTest constructor.
      * @param null $name
      * @param array $data
      * @param string $dataName

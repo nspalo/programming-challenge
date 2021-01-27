@@ -35,7 +35,7 @@ function should return 0, as explained above.
 a. `{[()()]}` is properly nested.
 
 ```php
-// should return 0
+// should return 1
 solution('{[()()]}');
 ```
 
