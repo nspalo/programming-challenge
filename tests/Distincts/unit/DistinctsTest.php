@@ -6,10 +6,10 @@ use Distincts\Distinct;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class TestArmstrongNumbers
- * @package ArmstrongNumbers\unit
+ * Class DistinctsTest
+ * @package Distincts\unit
  */
-class TestDistincts extends TestCase
+class DistinctsTest extends TestCase
 {
     /**
      * @var Distinct
@@ -26,7 +26,7 @@ class TestDistincts extends TestCase
     }
 
     /**
-     * TestArmstrongNumbers constructor.
+     * ArmstrongNumbersTest constructor.
      * @param null $name
      * @param array $data
      * @param string $dataName
