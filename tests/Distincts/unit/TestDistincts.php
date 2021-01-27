@@ -84,5 +84,4 @@ class TestDistincts extends TestCase
         $this->displayMessage($numbers, $result);
         self::assertEquals($expected, $result);
     }
-
 }

@@ -9,18 +9,26 @@ namespace Distincts;
 class Distinct
 {
     /**
-     * @param $A
+     * @param $numbers
      * @return int
      */
-    public function solution($A): int
+    public function solution($numbers): int
     {
-        $list = [];
-        foreach ($A as $item) {
-            if (!in_array($item, $list, true)) {
-                $list[] = $item;
+        // Array of distinct number
+        $distinctNumbers = [];
+
+        // Loop through each number in the array
+        foreach ($numbers as $number) {
+            /**
+             * Check if it's already in the array of distinct numbers
+             * insert the number if it's not found, otherwise ignore
+             */
+            if (!in_array($number, $distinctNumbers, true)) {
+                $distinctNumbers[] = $number;
             }
         }
 
-        return count($list);
+        // count the items in the array
+        return count($distinctNumbers);
     }
 }
