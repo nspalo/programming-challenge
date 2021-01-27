@@ -6,10 +6,10 @@ use ArmstrongNumbers\ArmstrongNumber;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class TestArmstrongNumbers
+ * Class ArmstrongNumbersTest
  * @package ArmstrongNumbers\unit
  */
-class TestArmstrongNumbers extends TestCase
+class ArmstrongNumbersTest extends TestCase
 {
     /**
      * @var ArmstrongNumber
@@ -22,11 +22,11 @@ class TestArmstrongNumbers extends TestCase
      */
     private function displayMessage($number, $result): void
     {
-        echo "$number is " . (($result) ? "an" : "not an") . " Armstrong Number";
+        echo "$number is " . (($result) ? "an" : "not an") . " Armstrong Number" . PHP_EOL;
     }
 
     /**
-     * TestArmstrongNumbers constructor.
+     * ArmstrongNumbersTest constructor.
      * @param null $name
      * @param array $data
      * @param string $dataName

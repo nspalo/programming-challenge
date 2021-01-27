@@ -3,11 +3,21 @@
         bootstrap="vendor/autoload.php"
         colors="true"
         verbose="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
         stopOnFailure="false"
     >
     <testsuites>
-        <testsuite name="Test Armstrong Numbers">
-            <directory>tests/ArmstrongNumbers/unit</directory>
+        <testsuite name="ArmstrongNumbers">
+            <directory suffix="Test.php">./tests/ArmstrongNumbers/unit</directory>
+        </testsuite>
+        <testsuite name="Brackets">
+            <directory suffix="Test.php">./tests/Brackets/unit</directory>
+        </testsuite>
+        <testsuite name="Distincts">
+            <directory suffix="Test.php">./tests/Distincts/unit</directory>
         </testsuite>
     </testsuites>
 </phpunit>
