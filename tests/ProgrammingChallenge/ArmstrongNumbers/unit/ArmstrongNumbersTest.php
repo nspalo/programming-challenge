@@ -10,7 +10,7 @@ use ProgrammingChallenge\BaseTest;
  * @package ArmstrongNumbers\unit
  * @covers \ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber
  */
-class ArmstrongNumbersTest extends BaseTest
+final class ArmstrongNumbersTest extends BaseTest
 {
     /**
      * @var ArmstrongNumber

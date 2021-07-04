@@ -6,7 +6,7 @@ namespace ProgrammingChallenge\ArmstrongNumbers;
  * Class ArmstrongNumber
  * @package ArmstrongNumbers
  */
-class ArmstrongNumber
+final class ArmstrongNumber
 {
     /**
      * @param int $possibleArmstrongNumber
@@ -16,13 +16,13 @@ class ArmstrongNumber
     {
         $sumOfCubeOfDigits = array_sum(
             array_map(
-                function ($digit) use($possibleArmstrongNumber){
-                    return pow($digit,strlen((string)$possibleArmstrongNumber));
+                static function ($digit) use ($possibleArmstrongNumber) {
+                    return $digit ** \strlen((string)$possibleArmstrongNumber);
                 },
-                str_split((string)$possibleArmstrongNumber)
+                \str_split((string)$possibleArmstrongNumber)
             )
         );
 
-        return ($sumOfCubeOfDigits === $possibleArmstrongNumber) ? true : false;
+        return $sumOfCubeOfDigits === $possibleArmstrongNumber;
     }
 }
