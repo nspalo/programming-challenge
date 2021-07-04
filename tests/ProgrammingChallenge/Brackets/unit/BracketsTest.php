@@ -1,40 +1,24 @@
 <?php
 
-namespace Brackets\unit;
+namespace ProgrammingChallenge\Brackets\unit;
 
-use PHPUnit\Framework\TestCase;
-use Brackets\Bracket;
+use ProgrammingChallenge\BaseTest;
+use ProgrammingChallenge\Brackets\Bracket;
 
 /**
  * Class TestBrackets
  * @package Brackets\unit
  */
-class TestBrackets extends TestCase
+class BracketsTest extends BaseTest
 {
     /**
      * @var Bracket
      */
     private Bracket $bracket;
 
-    /**
-     * @param $string
-     * @param $result
-     */
-    private function displayMessage($string, $result): void
+    public function setUp(): void
     {
-        // echo (int)$result . " - `" . $string . "` -> is" . (($result) ? " " : " not ") . "properly nested.";
-        echo "Result: " . (int)$result . "; Input: `" . $string . "`";
-    }
-
-    /**
-     * TestBrackets constructor.
-     * @param null $name
-     * @param array $data
-     * @param string $dataName
-     */
-    public function __construct($name = null, array $data = [], $dataName = '')
-    {
-        parent::__construct($name, $data, $dataName);
+        parent::setUp();
 
         /**
          * Initialize the ArmstrongNumber Class
