@@ -6,8 +6,8 @@
         stopOnFailure="false"
     >
     <testsuites>
-        <testsuite name="Test Armstrong Numbers">
-            <directory>tests/ArmstrongNumbers/unit</directory>
+        <testsuite name="Programming Challenge">
+            <directory>tests/ProgrammingChallenge/ArmstrongNumbers/unit</directory>
         </testsuite>
     </testsuites>
 </phpunit>

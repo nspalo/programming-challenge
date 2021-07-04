@@ -1,16 +1,16 @@
 <?php
 
-namespace ArmstrongNumbers\unit;
+namespace ProgrammingChallenge\ArmstrongNumbers\unit;
 
-use ArmstrongNumbers\ArmstrongNumber;
+use ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class TestArmstrongNumbers
  * @package ArmstrongNumbers\unit
- * @covers \ArmstrongNumbers\ArmstrongNumber
+ * @covers \ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber
  */
-class TestArmstrongNumbers extends TestCase
+class ArmstrongNumbersTest extends TestCase
 {
     /**
      * @var ArmstrongNumber

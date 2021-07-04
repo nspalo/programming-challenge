@@ -1,6 +1,6 @@
 <?php
 
-namespace ArmstrongNumbers;
+namespace ProgrammingChallenge\ArmstrongNumbers;
 
 /**
  * Class ArmstrongNumber
