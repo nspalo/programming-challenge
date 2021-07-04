@@ -10,7 +10,7 @@
       "ProgrammingChallenge\\": "tests/ProgrammingChallenge",
       "ProgrammingChallenge\\ArmstrongNumbers\\": "src/ArmstrongNumbers",
       "ProgrammingChallenge\\Brackets\\": "src/Brackets",
-      "Distincts\\": "Distincts"
+      "ProgrammingChallenge\\Distincts\\": "src/Distincts"
     }
   }
 }

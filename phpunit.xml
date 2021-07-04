@@ -17,7 +17,7 @@
             <directory>tests/ProgrammingChallenge/Brackets/unit</directory>
         </testsuite>
         <testsuite name="Distincts">
-            <directory suffix="Test.php">./tests/Distincts/unit</directory>
+            <directory>tests/ProgrammingChallenge/Distincts/unit</directory>
         </testsuite>
     </testsuites>
 </phpunit>
