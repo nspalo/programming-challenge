@@ -3,11 +3,15 @@
         bootstrap="vendor/autoload.php"
         colors="true"
         verbose="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
         stopOnFailure="false"
     >
     <testsuites>
         <testsuite name="Programming Challenge">
-            <directory>tests/ProgrammingChallenge/ArmstrongNumbers/unit</directory>
+            <directory>tests/ArmstrongNumbers/unit</directory>
         </testsuite>
     </testsuites>
 </phpunit>
