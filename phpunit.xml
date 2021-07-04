@@ -10,11 +10,11 @@
         stopOnFailure="false"
     >
     <testsuites>
-        <testsuite name="ArmstrongNumbers">
+        <testsuite name="Programming Challenge">
             <directory suffix="Test.php">./tests/ArmstrongNumbers/unit</directory>
         </testsuite>
         <testsuite name="Brackets">
-            <directory suffix="Test.php">./tests/Brackets/unit</directory>
+            <directory suffix="Test.php">./tests/ProgrammingChallenge/Brackets/unit</directory>
         </testsuite>
         <testsuite name="Distincts">
             <directory suffix="Test.php">./tests/Distincts/unit</directory>
