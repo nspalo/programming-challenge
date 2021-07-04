@@ -1,6 +1,6 @@
 <?php
 
-namespace Brackets;
+namespace ProgrammingChallenge\Brackets;
 
 /**
  * Class Bracket

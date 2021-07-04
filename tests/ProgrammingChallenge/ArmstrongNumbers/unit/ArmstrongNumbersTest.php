@@ -1,39 +1,24 @@
 <?php
 
-namespace ArmstrongNumbers\unit;
+namespace ProgrammingChallenge\ArmstrongNumbers\unit;
 
-use ArmstrongNumbers\ArmstrongNumber;
-use PHPUnit\Framework\TestCase;
+use ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber;
+use ProgrammingChallenge\BaseTest;
 
 /**
  * Class ArmstrongNumbersTest
  * @package ArmstrongNumbers\unit
  */
-class ArmstrongNumbersTest extends TestCase
+class ArmstrongNumbersTest extends BaseTest
 {
     /**
      * @var ArmstrongNumber
      */
     private ArmstrongNumber $armstrongNumber;
 
-    /**
-     * @param $number
-     * @param $result
-     */
-    private function displayMessage($number, $result): void
+    protected function setUp(): void
     {
-        echo "$number is " . (($result) ? "an" : "not an") . " Armstrong Number" . PHP_EOL;
-    }
-
-    /**
-     * ArmstrongNumbersTest constructor.
-     * @param null $name
-     * @param array $data
-     * @param string $dataName
-     */
-    public function __construct($name = null, array $data = [], $dataName = '')
-    {
-        parent::__construct($name, $data, $dataName);
+        parent::setUp();
 
         /**
          * Initialize the ArmstrongNumber Class

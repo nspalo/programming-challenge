@@ -11,10 +11,10 @@
     >
     <testsuites>
         <testsuite name="ArmstrongNumbers">
-            <directory suffix="Test.php">./tests/ArmstrongNumbers/unit</directory>
+            <directory>tests/ProgrammingChallenge/ArmstrongNumbers/unit</directory>
         </testsuite>
         <testsuite name="Brackets">
-            <directory suffix="Test.php">./tests/Brackets/unit</directory>
+            <directory>tests/ProgrammingChallenge/Brackets/unit</directory>
         </testsuite>
         <testsuite name="Distincts">
             <directory suffix="Test.php">./tests/Distincts/unit</directory>
