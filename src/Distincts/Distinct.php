@@ -1,6 +1,6 @@
 <?php
 
-namespace Distincts;
+namespace ProgrammingChallenge\Distincts;
 
 /**
  * Class Distinct
