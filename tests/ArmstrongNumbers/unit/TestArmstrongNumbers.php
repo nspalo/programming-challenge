@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class TestArmstrongNumbers
  * @package ArmstrongNumbers\unit
- * @covers \ArmstrongNumbers
+ * @covers \ArmstrongNumbers\ArmstrongNumber
  */
 class TestArmstrongNumbers extends TestCase
 {
