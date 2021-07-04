@@ -3,7 +3,7 @@
         "phpunit/phpunit": "^8.5"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
