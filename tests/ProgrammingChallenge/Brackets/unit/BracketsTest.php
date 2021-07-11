@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ProgrammingChallenge\Brackets\unit;
 
 use ProgrammingChallenge\BaseTest;
@@ -9,7 +11,7 @@ use ProgrammingChallenge\Brackets\Bracket;
  * Class TestBrackets
  * @package Brackets\unit
  */
-class BracketsTest extends BaseTest
+final class BracketsTest extends BaseTest
 {
     /**
      * @var Bracket

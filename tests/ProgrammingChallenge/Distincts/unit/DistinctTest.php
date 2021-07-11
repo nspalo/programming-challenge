@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ProgrammingChallenge\Distincts\unit;
 
 use ProgrammingChallenge\BaseTest;
@@ -9,7 +11,7 @@ use ProgrammingChallenge\Distincts\Distinct;
  * Class DistinctsTest
  * @package Distincts\unit
  */
-class DistinctsTest extends BaseTest
+final class DistinctTest extends BaseTest
 {
     /**
      * @var Distinct

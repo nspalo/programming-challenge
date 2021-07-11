@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ProgrammingChallenge\ArmstrongNumbers\unit;
 
 use ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber;
@@ -9,7 +11,7 @@ use ProgrammingChallenge\BaseTest;
  * Class ArmstrongNumbersTest
  * @package ArmstrongNumbers\unit
  */
-class ArmstrongNumbersTest extends BaseTest
+final class ArmstrongNumbersTest extends BaseTest
 {
     /**
      * @var ArmstrongNumber
@@ -27,10 +29,9 @@ class ArmstrongNumbersTest extends BaseTest
     }
 
     /**
-     * @test
      * Test Number 100
      */
-    public function EvaluateNumber_100_False(): void
+    public function test_EvaluateNumber_100_False(): void
     {
         $number = 100;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
