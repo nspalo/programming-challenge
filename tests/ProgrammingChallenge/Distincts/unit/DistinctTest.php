@@ -29,46 +29,43 @@ final class DistinctTest extends BaseTest
     }
 
     /**
-     * @test
      * array values: 2, 1, 1, 2, 3, 1
      */
-    public function EvaluateDistinctValues_test0(): void
+    public function testEvaluateDistinctValues0(): void
     {
         $numbers = [2, 1, 1, 2, 3, 1];
         $result = $this->distinct->solution($numbers);
         $expected = 3;
 
-        $this->displayMessage(\implode($numbers), $result);
+        $this->displayMessage(\implode($numbers), (string)$result);
         self::assertEquals($expected, $result);
     }
 
 
     /**
-     * @test
      * array values: 7, 7, 1, 2, 3, 1, 3, 4, 2
      */
-    public function EvaluateDistinctValues_test1(): void
+    public function testEvaluateDistinctValues1(): void
     {
         $numbers = [7, 7, 1, 2, 3, 1, 3, 4, 2];
         $result = $this->distinct->solution($numbers);
         $expected = 5;
 
-        $this->displayMessage(\implode($numbers), $result);
+        $this->displayMessage(\implode($numbers), (string)$result);
         self::assertEquals($expected, $result);
     }
 
 
     /**
-     * @test
      * array values: 2,7,2,2,8,8,9,9,2
      */
-    public function EvaluateDistinctValues_test2(): void
+    public function testEvaluateDistinctValues2(): void
     {
         $numbers = [2, 7, 2, 2, 8, 8, 9, 9, 2];
         $result = $this->distinct->solution($numbers);
         $expected = 4;
 
-        $this->displayMessage(\implode($numbers), $result);
+        $this->displayMessage(\implode($numbers), (string)$result);
         self::assertEquals($expected, $result);
     }
 }

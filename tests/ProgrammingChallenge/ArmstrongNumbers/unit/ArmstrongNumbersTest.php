@@ -36,7 +36,7 @@ final class ArmstrongNumbersTest extends BaseTest
         $number = 100;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage($number, $result);
+        $this->displayMessage((string)$number, (string)$result);
         self::assertFalse($result);
     }
 
@@ -48,7 +48,7 @@ final class ArmstrongNumbersTest extends BaseTest
         $number = 153;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage($number, $result);
+        $$this->displayMessage((string)$number, (string)$result);
         self::assertTrue($result);
     }
 
@@ -60,7 +60,7 @@ final class ArmstrongNumbersTest extends BaseTest
         $number = 370;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage($number, $result);
+        $this->displayMessage((string)$number, (string)$result);
         self::assertTrue($result);
     }
 
@@ -72,7 +72,7 @@ final class ArmstrongNumbersTest extends BaseTest
         $number = 1634;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage($number, $result);
+        $this->displayMessage((string)$number, (string)$result);
         self::assertTrue($result);
     }
 
@@ -85,7 +85,7 @@ final class ArmstrongNumbersTest extends BaseTest
         $number = 2021;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage($number, $result);
+        $this->displayMessage((string)$number, (string)$result);
         self::assertFalse($result);
     }
 }

@@ -7,11 +7,11 @@ use PHPUnit\Framework\TestCase;
 abstract class BaseTest extends TestCase
 {
     /**
-     * @param $string
-     * @param $result
+     * @param string $string
+     * @param string $result
      */
-    protected function displayMessage($string, $result): void
+    protected function displayMessage(string $string, string $result): void
     {
-        echo "Result: " . (int)$result . "; Input: `" . $string . "`";
+        echo "Result: " . $result . "; Input: `" . $string . "`";
     }
 }

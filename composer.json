@@ -1,9 +1,10 @@
 {
-  "require": {
-    "phpunit/phpunit": "^8.5"
-  },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "phpunit/phpunit": "^8.5",
+    "roave/security-advisories": "dev-latest",
+    "symplify/easy-coding-standard": "^9.4",
+    "squizlabs/php_codesniffer": "3.*",
+    "phpstan/phpstan": "^0.12.92"
   },
   "autoload": {
     "psr-4": {

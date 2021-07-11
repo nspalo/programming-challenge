@@ -29,132 +29,122 @@ final class BracketsTest extends BaseTest
     }
 
     /**
-     * @test
      * Test nested brackets is empty
      */
-    public function EvaluateNestedBrackets_test0(): void
+    public function testEvaluateNestedBrackets0(): void
     {
         $brackets = "";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
     /**
-     * @test
      * Test nested brackets is {
      */
-    public function EvaluateNestedBrackets_test1(): void
+    public function testEvaluateNestedBrackets1(): void
     {
         $brackets = "{";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
     /**
-     * @test
      * Test nested brackets []
      */
-    public function EvaluateNestedBrackets_test2(): void
+    public function testEvaluateNestedBrackets2(): void
     {
         $brackets = "[]";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
     /**
-     * @test
      * Test nested brackets [])
      */
-    public function EvaluateNestedBrackets_test3(): void
+    public function testEvaluateNestedBrackets3(): void
     {
         $brackets = "[])";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
     /**
-     * @test
      * Test nested brackets {[[)(]]}
      */
-    public function EvaluateNestedBrackets_test4(): void
+    public function testEvaluateNestedBrackets4(): void
     {
         $brackets = "{[()()]}";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
     /**
-     * @test
      * Test nested brackets []()[
      */
-    public function EvaluateNestedBrackets_test5(): void
+    public function testEvaluateNestedBrackets5(): void
     {
         $brackets = "([)()]";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
     /**
-     * @test
      * Test nested brackets {[)(]{(}{)}}
      */
-    public function EvaluateNestedBrackets_test6(): void
+    public function testEvaluateNestedBrackets6(): void
     {
         $brackets = "{[)(]{(}{)}}";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
     /**
-     * @test
      * Test nested brackets [{}([]{})[{()}]]
      */
-    public function EvaluateNestedBrackets_test7(): void
+    public function testEvaluateNestedBrackets7(): void
     {
         $brackets = "[{}([]{})[{()}]]";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
     /**
-     * @test
      * Test nested brackets []()[
      */
-    public function EvaluateNestedBrackets_test8(): void
+    public function testEvaluateNestedBrackets8(): void
     {
         $brackets = "[]()[";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
     /**
-     * @test
      * Test nested brackets [(][){}(])
      */
-    public function EvaluateNestedBrackets_test9(): void
+    public function testEvaluateNestedBrackets9(): void
     {
         $brackets = "[(][){}(])";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage($brackets, $result);
+        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 }
