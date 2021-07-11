@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ProgrammingChallenge\Distincts;
 
 /**
  * Class Distinct
  * @package Distinct
  */
-class Distinct
+final class Distinct
 {
     /**
-     * @param $numbers
+     * @param array $numbers
      * @return int
      */
-    public function solution($numbers): int
+    public function solution(array $numbers): int
     {
         // Array of distinct number
         $distinctNumbers = [];
@@ -23,12 +25,12 @@ class Distinct
              * Check if it's already in the array of distinct numbers
              * insert the number if it's not found, otherwise ignore
              */
-            if (!in_array($number, $distinctNumbers, true)) {
+            if (\in_array($number, $distinctNumbers, true) === false) {
                 $distinctNumbers[] = $number;
             }
         }
 
         // count the items in the array
-        return count($distinctNumbers);
+        return \count($distinctNumbers);
     }
 }
