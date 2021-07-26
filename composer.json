@@ -1,4 +1,6 @@
 {
+  "name": "php/programming-challenge",
+  "description": "PHP Programming Challenge",
   "license": "MIT",
   "require-dev": {
     "phpunit/phpunit": "^8.5",
