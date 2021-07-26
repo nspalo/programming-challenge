@@ -33,4 +33,4 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run Tests
-      run: composer run-script test
+      run: composer run-script Test-ArmstrongNumbers
