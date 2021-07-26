@@ -37,3 +37,6 @@ jobs:
 
       - name: Run Brackets Tests
         run: composer run-script Test-Brackets
+
+      - name: Run Distinct Tests
+        run: composer run-script Test-Distincts

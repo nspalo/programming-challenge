@@ -19,6 +19,7 @@
   },
   "scripts": {
     "Test-ArmstrongNumbers": "vendor/bin/phpunit --testsuite ArmstrongNumbers",
-    "Test-Brackets": "vendor/bin/phpunit --testsuite Brackets"
+    "Test-Brackets": "vendor/bin/phpunit --testsuite Brackets",
+    "Test-Distincts": "vendor/bin/phpunit --testsuite Distincts"
   }
 }

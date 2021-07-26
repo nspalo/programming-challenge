@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace ProgrammingChallenge\Distincts\unit;
 
-use ProgrammingChallenge\BaseTest;
+use PHPUnit\Framework\TestCase;
 use ProgrammingChallenge\Distincts\Distinct;
 
 /**
  * Class DistinctsTest
  * @package Distincts\unit
  */
-final class DistinctTest extends BaseTest
+final class DistinctTest extends TestCase
 {
     /**
      * @var Distinct
@@ -37,7 +37,6 @@ final class DistinctTest extends BaseTest
         $result = $this->distinct->solution($numbers);
         $expected = 3;
 
-        $this->displayMessage(\implode($numbers), (string)$result);
         self::assertEquals($expected, $result);
     }
 
@@ -51,7 +50,6 @@ final class DistinctTest extends BaseTest
         $result = $this->distinct->solution($numbers);
         $expected = 5;
 
-        $this->displayMessage(\implode($numbers), (string)$result);
         self::assertEquals($expected, $result);
     }
 
@@ -65,7 +63,6 @@ final class DistinctTest extends BaseTest
         $result = $this->distinct->solution($numbers);
         $expected = 4;
 
-        $this->displayMessage(\implode($numbers), (string)$result);
         self::assertEquals($expected, $result);
     }
 }
