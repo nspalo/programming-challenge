@@ -1,4 +1,7 @@
 {
+  "name": "php/programming-challenge",
+  "description": "PHP Programming Challenge",
+  "license": "MIT",
   "require-dev": {
     "phpunit/phpunit": "^8.5",
     "roave/security-advisories": "dev-latest",
@@ -13,5 +16,8 @@
       "ProgrammingChallenge\\Brackets\\": "src/Brackets",
       "ProgrammingChallenge\\Distincts\\": "src/Distincts"
     }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
   }
 }
