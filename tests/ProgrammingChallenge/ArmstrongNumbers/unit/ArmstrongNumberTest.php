@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace ProgrammingChallenge\ArmstrongNumbers\unit;
 
+use PHPUnit\Framework\TestCase;
 use ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber;
-use ProgrammingChallenge\BaseTest;
 
 /**
- * Class ArmstrongNumbersTest
- * @package ArmstrongNumbers\unit
+ * @package \ArmstrongNumbers\unit
+ * @covers \ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber
  */
-final class ArmstrongNumbersTest extends BaseTest
+final class ArmstrongNumberTest extends TestCase
 {
     /**
      * @var ArmstrongNumber
@@ -31,48 +31,44 @@ final class ArmstrongNumbersTest extends BaseTest
     /**
      * Test Number 100
      */
-    public function test_EvaluateNumber_100_False(): void
+    public function testShouldEvaluateFalseOn100(): void
     {
         $number = 100;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage((string)$number, (string)$result);
         self::assertFalse($result);
     }
 
     /**
      * Test Number 153
      */
-    public function test_EvaluateNumber_153_True(): void
+    public function testShouldEvaluateTrueOn153(): void
     {
         $number = 153;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $$this->displayMessage((string)$number, (string)$result);
         self::assertTrue($result);
     }
 
     /**
      * Test Number 370
      */
-    public function test_EvaluateNumber_370_True(): void
+    public function testShouldEvaluateTrueOn370(): void
     {
         $number = 370;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage((string)$number, (string)$result);
         self::assertTrue($result);
     }
 
     /**
      * Test Number 1634
      */
-    public function test_EvaluateNumber_1634_True(): void
+    public function testShouldEvaluateTrueOn1634(): void
     {
         $number = 1634;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage((string)$number, (string)$result);
         self::assertTrue($result);
     }
 
@@ -80,12 +76,11 @@ final class ArmstrongNumbersTest extends BaseTest
     /**
      * Test Number 2021
      */
-    public function test_EvaluateNumber_2021_False(): void
+    public function testShouldEvaluateFalseOn2021(): void
     {
         $number = 2021;
         $result = $this->armstrongNumber->isArmstrongNumber($number);
 
-        $this->displayMessage((string)$number, (string)$result);
         self::assertFalse($result);
     }
 }
