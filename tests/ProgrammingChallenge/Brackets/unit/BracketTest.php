@@ -8,10 +8,10 @@ use PHPUnit\Framework\TestCase;
 use ProgrammingChallenge\Brackets\Bracket;
 
 /**
- * Class TestBrackets
- * @package Brackets\unit
+ * @package \Brackets\unit
+ * @covers \ProgrammingChallenge\Brackets\Bracket
  */
-final class BracketsTest extends TestCase
+final class BracketTest extends TestCase
 {
     /**
      * @var Bracket

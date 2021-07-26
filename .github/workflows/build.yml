@@ -1,4 +1,4 @@
-name: Build
+name: PHP Programming Challenge
 
 on:
   push:

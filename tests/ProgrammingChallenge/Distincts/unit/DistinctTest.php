@@ -8,8 +8,8 @@ use PHPUnit\Framework\TestCase;
 use ProgrammingChallenge\Distincts\Distinct;
 
 /**
- * Class DistinctsTest
- * @package Distincts\unit
+ * @package \Distincts\unit
+ * @covers \ProgrammingChallenge\Distincts\Distinct
  */
 final class DistinctTest extends TestCase
 {

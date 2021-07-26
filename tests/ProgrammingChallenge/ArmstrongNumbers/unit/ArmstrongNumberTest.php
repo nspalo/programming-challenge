@@ -8,10 +8,10 @@ use PHPUnit\Framework\TestCase;
 use ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber;
 
 /**
- * Class ArmstrongNumbersTest
- * @package ArmstrongNumbers\unit
+ * @package \ArmstrongNumbers\unit
+ * @covers \ProgrammingChallenge\ArmstrongNumbers\ArmstrongNumber
  */
-final class ArmstrongNumbersTest extends TestCase
+final class ArmstrongNumberTest extends TestCase
 {
     /**
      * @var ArmstrongNumber
