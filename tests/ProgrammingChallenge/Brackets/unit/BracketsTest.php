@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace ProgrammingChallenge\Brackets\unit;
 
-use ProgrammingChallenge\BaseTest;
+use PHPUnit\Framework\TestCase;
 use ProgrammingChallenge\Brackets\Bracket;
 
 /**
  * Class TestBrackets
  * @package Brackets\unit
  */
-final class BracketsTest extends BaseTest
+final class BracketsTest extends TestCase
 {
     /**
      * @var Bracket
@@ -36,7 +36,6 @@ final class BracketsTest extends BaseTest
         $brackets = "";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
@@ -48,7 +47,6 @@ final class BracketsTest extends BaseTest
         $brackets = "{";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
@@ -60,7 +58,6 @@ final class BracketsTest extends BaseTest
         $brackets = "[]";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
@@ -72,7 +69,6 @@ final class BracketsTest extends BaseTest
         $brackets = "[])";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
@@ -84,7 +80,6 @@ final class BracketsTest extends BaseTest
         $brackets = "{[()()]}";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
@@ -96,7 +91,6 @@ final class BracketsTest extends BaseTest
         $brackets = "([)()]";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
@@ -108,7 +102,6 @@ final class BracketsTest extends BaseTest
         $brackets = "{[)(]{(}{)}}";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
@@ -120,7 +113,6 @@ final class BracketsTest extends BaseTest
         $brackets = "[{}([]{})[{()}]]";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertTrue($result);
     }
 
@@ -132,7 +124,6 @@ final class BracketsTest extends BaseTest
         $brackets = "[]()[";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 
@@ -144,7 +135,6 @@ final class BracketsTest extends BaseTest
         $brackets = "[(][){}(])";
         $result = $this->bracket->solution($brackets);
 
-        $this->displayMessage((string)$brackets, (string)$result);
         self::assertFalse($result);
     }
 }

@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -26,11 +26,14 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+      # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+      # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    - name: Run Tests
-      run: composer run-script Test-ArmstrongNumbers
+      - name: Run ArmstrongNumber Tests
+        run: composer run-script Test-ArmstrongNumbers
+
+      - name: Run Brackets Tests
+        run: composer run-script Test-Brackets
