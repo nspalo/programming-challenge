@@ -41,6 +41,9 @@ jobs:
           - { name: Distincts }
 
     steps:
+      # Checkout Codes
+      - uses: actions/checkout@v2
+
       # Run Tests
       - name: Run Test - ${{ matrix.actions.name }}
         run: composer run-script Test-${{ matrix.actions.name }}
