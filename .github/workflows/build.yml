@@ -1,17 +1,24 @@
-name: PHP Programming Challenge
+name: Programming Challenge CI
 
 on:
   push:
     branches: [ master, develop ]
-  pull_request:
-    branches: [ master, develop ]
 
 jobs:
-  build:
+  matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        actions:
+          - { name: Test - ArmstrongNumber, run: composer run-script Test-ArmstrongNumbers }
+          - { name: Test - Brackets, run: composer run-script Test-Brackets }
+          - { name: Test - Distinct, run: composer run-script Test-Distincts }
 
+    name: ${{ matrix.actions.name }}
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Branch
       - uses: actions/checkout@v2
 
       - name: Validate composer.json and composer.lock
@@ -28,15 +35,3 @@ jobs:
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-
-      # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-      # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-      - name: Run ArmstrongNumber Tests
-        run: composer run-script Test-ArmstrongNumbers
-
-      - name: Run Brackets Tests
-        run: composer run-script Test-Brackets
-
-      - name: Run Distinct Tests
-        run: composer run-script Test-Distincts
