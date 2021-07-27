@@ -9,19 +9,33 @@ jobs:
       fail-fast: false
       matrix:
         tests:
-          - { name: Test - ArmstrongNumber, run: ArmstrongNumbers }
-          - { name: Test - Brackets, run: Brackets }
-          - { name: Test - Distinct, run: Distincts }
+          - { name: ArmstrongNumbers }
+          - { name: Brackets }
+          - { name: Distincts }
 
     steps:
       # Checkout Commit
       - name: Checkout Branch
         uses: actions/checkout@v2
 
+      # Validate Composer
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      # Composer Cache
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
       # Install Dependency
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      - name: ${{ matrix.tests.name }}
-        run: composer run-script Test-${{ matrix.tests.run }}
+      - name: 'Run Test:' ${{ matrix.tests.name }}
+        run: composer run-script Test-${{ matrix.tests.name }}
