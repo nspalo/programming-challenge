@@ -8,8 +8,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        test-name: [ 'Test - ArmstrongNumber', 'Test - Brackets', 'Test - Distinct' ]
-        test-suite: [ 'ArmstrongNumbers', 'Brackets', 'Distinct' ]
+        tests:
+          - { name: Test - ArmstrongNumber, run: ArmstrongNumbers }
+          - { name: Test - Brackets, run: Brackets }
+          - { name: Test - Distinct, run: Distincts }
 
     steps:
       # Checkout Commit
@@ -21,5 +23,5 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      - name: ${{ matrix.test-name }}
-        run: composer run-script Test-${{ matrix.test-suite }}
+      - name: ${{ matrix.tests.name }}
+        run: composer run-script Test-${{ matrix.tests.run }}
