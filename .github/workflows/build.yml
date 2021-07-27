@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -13,10 +14,6 @@ jobs:
           - { name: Test - ArmstrongNumber, run: composer run-script Test-ArmstrongNumbers }
           - { name: Test - Brackets, run: composer run-script Test-Brackets }
           - { name: Test - Distinct, run: composer run-script Test-Distincts }
-
-
-    name: ${{ matrix.actions.name }}
-    runs-on: ubuntu-latest
 
     steps:
       # Checkout Commit
