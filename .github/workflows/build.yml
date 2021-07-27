@@ -40,6 +40,7 @@ jobs:
           - { name: Brackets }
           - { name: Distincts }
 
+        steps:
           # Run Tests
           - name: Run Test - ${{ matrix.actions.name }}
             run: composer run-script Test-${{ matrix.actions.name }}
