@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        actions:
+        cfg:
           - { name: Test - ArmstrongNumber, run: composer run-script Test-ArmstrongNumbers }
           - { name: Test - Brackets, run: composer run-script Test-Brackets }
           - { name: Test - Distinct, run: composer run-script Test-Distincts }
@@ -39,5 +39,5 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      - name: ${{ matrix.actions.name }}
-        run: ${{ matrix.actions.run }}
+      - name: ${{ matrix.cfg.name }}
+        run: ${{ matrix.cfg.run }}
