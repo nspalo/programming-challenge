@@ -39,5 +39,5 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      - name: ${{ matrix.cfg.name }}
-        run: ${{ matrix.cfg.run }}
+      #- name: ${{ matrix.cfg.name }}
+      #  run: ${{ matrix.cfg.run }}
