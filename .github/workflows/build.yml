@@ -35,11 +35,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tests:
+        actions:
           - { name: ArmstrongNumbers }
           - { name: Brackets }
           - { name: Distincts }
 
-        # Run Tests
-        - name: Run Test - ${{ matrix.tests.name }}
-          run: composer run-script Test-${{ matrix.tests.name }}
+          # Run Tests
+          - name: Run Test - ${{ matrix.actions.name }}
+            run: composer run-script Test-${{ matrix.actions.name }}
