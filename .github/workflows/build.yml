@@ -6,14 +6,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        cfg:
-          - { name: Test - ArmstrongNumber, run: composer run-script Test-ArmstrongNumbers }
-          - { name: Test - Brackets, run: composer run-script Test-Brackets }
-          - { name: Test - Distinct, run: composer run-script Test-Distincts }
+        test-name: [ 'Test - ArmstrongNumber', 'Test - Brackets', 'Test - Distinct' ]
+        test-suite: [ 'ArmstrongNumbers', 'Brackets', 'Distinct' ]
+
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout Commit
@@ -39,5 +38,5 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      #- name: ${{ matrix.cfg.name }}
-      #  run: ${{ matrix.cfg.run }}
+      - name: ${{ matrix.test-name }}
+        run: composer run-script Test-${{ matrix.test-suite }}
