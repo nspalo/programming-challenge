@@ -5,6 +5,13 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        actions:
+          - { name: ArmstrongNumbers }
+          - { name: Brackets }
+          - { name: Distincts }
 
     steps:
       # Checkout Commit
@@ -28,21 +35,6 @@ jobs:
       # Install Dependency
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-
-  tests:
-    needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        actions:
-          - { name: ArmstrongNumbers }
-          - { name: Brackets }
-          - { name: Distincts }
-
-    steps:
-      # Checkout Codes
-      - uses: actions/checkout@v2
 
       # Run Tests
       - name: Run Test - ${{ matrix.actions.name }}
