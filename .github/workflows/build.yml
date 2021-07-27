@@ -37,5 +37,5 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      - name: 'Run Test:' ${{ matrix.tests.name }}
+      - name: Run Test - ${{ matrix.tests.name }}
         run: composer run-script Test-${{ matrix.tests.name }}
