@@ -18,12 +18,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout Commit
       - name: Checkout Branch
       - uses: actions/checkout@v2
 
+      # Validate Composer
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
 
+      # Cache Composer
       - name: Cache Composer packages
         id: composer-cache
         uses: actions/cache@v2
@@ -33,5 +36,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
+      # Install Dependency
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
+
+      # Run Tests
+      - name: ${{ matrix.actions.name }}
+        run: ${{ matrix.actions.run }}
