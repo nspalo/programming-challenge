@@ -14,12 +14,12 @@ jobs:
     steps:
       # Checkout Commit
       - name: Checkout Branch
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       # Install Dependency
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-#      - name: ${{ matrix.test-name }}
-#        run: composer run-script Test-${{ matrix.test-suite }}
+      - name: ${{ matrix.test-name }}
+        run: composer run-script Test-${{ matrix.test-suite }}
