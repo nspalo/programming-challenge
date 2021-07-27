@@ -3,15 +3,17 @@ name: Programming Challenge CI
 on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  matrix:
     strategy:
       fail-fast: false
       matrix:
         actions:
-          - { name: ArmstrongNumbers }
-          - { name: Brackets }
-          - { name: Distincts }
+          - { name: Armstrong Numbers Test, test: ArmstrongNumbers }
+          - { name: Brackets Test, test: Brackets }
+          - { name: Distincts Test, test: Distincts }
+
+    name: Run ${{ matrix.actions.name }}
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout Commit
@@ -37,5 +39,5 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run Tests
-      - name: Run Test - ${{ matrix.actions.name }}
-        run: composer run-script Test-${{ matrix.actions.name }}
+      - name: Run ${{ matrix.actions.name }}
+        run: composer run-script Test-${{ matrix.actions.test }}
