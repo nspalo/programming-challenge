@@ -2,26 +2,32 @@
 
 declare(strict_types=1);
 
-// ecs.php
-use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
-use PhpCsFixer\Fixer\ClassNotation\ProtectedToPrivateFixer;
-use PhpCsFixer\Fixer\ControlStructure\NoUnneededControlParenthesesFixer;
-use PhpCsFixer\Fixer\ControlStructure\NoUnneededCurlyBracesFixer;
-use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
-use PhpCsFixer\Fixer\Import\OrderedImportsFixer;
-use PhpCsFixer\Fixer\Semicolon\NoEmptyStatementFixer;
+use PhpCsFixer\Fixer\PhpUnit\PhpUnitStrictFixer;
+use PhpCsFixer\Fixer\Strict\StrictParamFixer;
+use PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer;
+use PhpCsFixer\Fixer\Whitespace\LineEndingFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\CodingStandard\Fixer\Commenting\ParamReturnAndVarTagMalformsFixer;
+use Symplify\CodingStandard\Fixer\Commenting\RemoveUselessDefaultCommentFixer;
+use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    // A. standalone rule
-    $services = $containerConfigurator->services();
-    $services->set(ArraySyntaxFixer::class)
-        ->call('configure', [[
-            'syntax' => 'short',
-        ]]);
 
-    //  B. full sets
+//    $containerConfigurator->import(SetList::PSR_12);
+//    $containerConfigurator->import(SetList::COMMON);
+//    $containerConfigurator->import(SetList::PHP_CS_FIXER);
     $containerConfigurator->import(SetList::CLEAN_CODE);
+
+    $parameters = $containerConfigurator->parameters();
+
+    $parameters->set(Option::CACHE_DIRECTORY, '.ecs_cache');
+    $parameters->set(Option::INDENTATION, 'spaces');
+
+    $parameters->set(Option::PATHS, [
+        __DIR__ . '/src',
+        __DIR__ . '/tests',
+    ]);
+
+//    $parameters->set(Option::SKIP, [
+//    ]);
 };
