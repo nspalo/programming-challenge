@@ -42,6 +42,10 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
+      # Run PHP Coding Standards
+      - name: PHP Coding Standards
+        run: vendor/bin/phpstan analyse src/${{ matrix.actions.test }} tests/ProgrammingChallenge/${{ matrix.actions.test }} --level=7
+
       # Run Tests
       - name: Run ${{ matrix.actions.name }}
         run: composer run-script Test-${{ matrix.actions.test }}
