@@ -12,11 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         actions:
-          - { name: Armstrong Numbers Test, test: ArmstrongNumbers }
-          - { name: Brackets Test, test: Brackets }
-          - { name: Distincts Test, test: Distincts }
+          - { name: Armstrong Numbers, test: ArmstrongNumbers }
+          - { name: Brackets, test: Brackets }
+          - { name: Distincts, test: Distincts }
 
-    name: Run ${{ matrix.actions.name }}
+    name: ${{ matrix.actions.name }} CI
     runs-on: ubuntu-latest
 
     steps:
@@ -43,9 +43,13 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # Run PHP Coding Standards
-      - name: PHP Coding Standards
-        run: vendor/bin/phpstan analyse src/${{ matrix.actions.test }} tests/ProgrammingChallenge/${{ matrix.actions.test }} --level=7
+      - name: ${{ matrix.actions.name }} PHP Coding Standards
+        run: composer run-script ${{ matrix.actions.test }}-PhpStan
+
+      # Run Easy Coding Standards
+      - name: ${{ matrix.actions.name }} Easy Coding Standards
+        run: composer run-script ${{ matrix.actions.test }}-Esc
 
       # Run Tests
-      - name: Run ${{ matrix.actions.name }}
-        run: composer run-script Test-${{ matrix.actions.test }}
+      - name: ${{ matrix.actions.name }} Test
+        run: composer run-script ${{ matrix.actions.test }}-Test
