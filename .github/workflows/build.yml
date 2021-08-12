@@ -12,11 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         actions:
-          - { name: Armstrong Numbers Test, test: ArmstrongNumbers }
-          - { name: Brackets Test, test: Brackets }
-          - { name: Distincts Test, test: Distincts }
+          - { name: Armstrong Numbers, module: ArmstrongNumbers }
+          - { name: Brackets, module: Brackets }
+          - { name: Distincts, module: Distincts }
 
-    name: Run ${{ matrix.actions.name }}
+    name: ${{ matrix.actions.name }} Coding Standards & Test
     runs-on: ubuntu-latest
 
     steps:
@@ -42,6 +42,14 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
+      # Run PHP Coding Standards
+      - name: PHP Coding Standards - ${{ matrix.actions.name }}
+        run: composer run-script ${{ matrix.actions.module }}-PhpStan
+
+      # Run Easy Coding Standards
+      - name: Easy Coding Standards - ${{ matrix.actions.name }}
+        run: composer run-script ${{ matrix.actions.module }}-Ecs
+
       # Run Tests
-      - name: Run ${{ matrix.actions.name }}
-        run: composer run-script Test-${{ matrix.actions.test }}
+      - name: Unit Test - ${{ matrix.actions.name }}
+        run: composer run-script ${{ matrix.actions.module }}-Test

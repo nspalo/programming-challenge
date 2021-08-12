@@ -18,8 +18,14 @@
     }
   },
   "scripts": {
-    "Test-ArmstrongNumbers": "vendor/bin/phpunit --testsuite ArmstrongNumbers",
-    "Test-Brackets": "vendor/bin/phpunit --testsuite Brackets",
-    "Test-Distincts": "vendor/bin/phpunit --testsuite Distincts"
+    "ArmstrongNumbers-PhpStan": "vendor/bin/phpstan analyse src/ArmstrongNumbers tests/ProgrammingChallenge/ArmstrongNumbers --level=7 --ansi",
+    "ArmstrongNumbers-Ecs": "vendor/bin/ecs check src/ArmstrongNumbers tests/ProgrammingChallenge/ArmstrongNumbers --clear-cache",
+    "ArmstrongNumbers-Test": "vendor/bin/phpunit --testsuite ArmstrongNumbers",
+    "Brackets-PhpStan": "vendor/bin/phpstan analyse src/Brackets tests/ProgrammingChallenge/Brackets --level=7 --ansi",
+    "Brackets-Ecs": "vendor/bin/ecs check src/Brackets tests/ProgrammingChallenge/Brackets --clear-cache",
+    "Brackets-Test": "vendor/bin/phpunit --testsuite Brackets",
+    "Distincts-PhpStan": "vendor/bin/phpstan analyse src/Distincts tests/ProgrammingChallenge/Distincts --level=7 --ansi",
+    "Distincts-Ecs": "vendor/bin/ecs check src/Distincts tests/ProgrammingChallenge/Distincts --clear-cache",
+    "Distincts-Test": "vendor/bin/phpunit --testsuite Distincts"
   }
 }
