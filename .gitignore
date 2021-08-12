@@ -1,4 +1,11 @@
-.phpunit.result.cache
-composer.lock
+# PhpStorm Settings
 .idea
+# Php Test
+.phpunit.result.cache
+
+# Easy Coding Standard
+.ecs_cache
+
+# Environment
+composer.lock
 /vendor
