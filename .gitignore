@@ -1,11 +1,9 @@
 # PhpStorm Settings
-.idea
+/.idea
+# Environment
+/vendor
+# Easy Coding Standard
+/.ecs_cache
+
 # Php Test
 .phpunit.result.cache
-
-# Easy Coding Standard
-.ecs_cache
-
-# Environment
-composer.lock
-/vendor

@@ -38,18 +38,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
+      # Validate Composer
+      - name: Validate composer.json
+        run: composer run validate-composer
+
       # Install Dependency
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
       # Run PHP Coding Standards
-      - name: PHP Coding Standards - ${{ matrix.actions.name }}
-        run: composer run-script ${{ matrix.actions.module }}-PhpStan
+      - name: Run PHPStan
+        run: composer run check-phpstan
 
       # Run Easy Coding Standards
-      - name: Easy Coding Standards - ${{ matrix.actions.name }}
-        run: composer run-script ${{ matrix.actions.module }}-Ecs
+      - name: Run Easy Coding Standards
+        run: composer run check-ecs
 
       # Run Tests
-      - name: Unit Test - ${{ matrix.actions.name }}
-        run: composer run-script ${{ matrix.actions.module }}-Test
+      - name: Run Unit Test - ${{ matrix.actions.name }}
+        run: composer run --group ${{ matrix.actions.module }}

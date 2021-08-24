@@ -11,7 +11,7 @@ namespace ProgrammingChallenge\Distincts;
 final class Distinct
 {
     /**
-     * @param array<int> $numbers
+     * @param int[] $numbers
      * @return int
      */
     public function solution(array $numbers): int
