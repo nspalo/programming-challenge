@@ -14,7 +14,7 @@ final class Bracket
      * @param string $string
      * @return bool
      */
-    public function solution(string $string = ""): bool
+    public function solution(string $string): bool
     {
         /**
          * get the length of the input string

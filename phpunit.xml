@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpunit
-        bootstrap="vendor/autoload.php"
-        colors="true"
-        verbose="true"
-        convertErrorsToExceptions="true"
-        convertNoticesToExceptions="true"
-        convertWarningsToExceptions="true"
-        processIsolation="false"
-        stopOnFailure="false"
-    >
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+    </coverage>
     <testsuites>
-        <testsuite name="ArmstrongNumbers">
-            <directory>tests/ProgrammingChallenge/ArmstrongNumbers/unit</directory>
-        </testsuite>
-        <testsuite name="Brackets">
-            <directory>tests/ProgrammingChallenge/Brackets/unit</directory>
-        </testsuite>
-        <testsuite name="Distincts">
-            <directory>tests/ProgrammingChallenge/Distincts/unit</directory>
+        <testsuite name="Project Test Suite">
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <ini name="error_reporting" value="-1"/>
+    </php>
 </phpunit>
