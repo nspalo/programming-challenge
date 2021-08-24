@@ -56,4 +56,4 @@ jobs:
 
       # Run Tests
       - name: Run Unit Test - ${{ matrix.actions.name }}
-        run: composer run --group ${{ matrix.actions.module }}
+        run: composer run ${{ matrix.actions.module }}-Test
