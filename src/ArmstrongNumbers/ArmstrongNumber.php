@@ -10,10 +10,6 @@ namespace ProgrammingChallenge\ArmstrongNumbers;
  */
 final class ArmstrongNumber
 {
-    /**
-     * @param int $possibleArmstrongNumber
-     * @return bool
-     */
     public function isArmstrongNumber(int $possibleArmstrongNumber = 100): bool
     {
         $sumOfCubeOfDigits = \array_sum(
