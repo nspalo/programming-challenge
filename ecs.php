@@ -17,6 +17,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 //    $containerConfigurator->import(SetList::PSR_12);
 
     $parameters = $containerConfigurator->parameters();
+//    $services = $containerConfigurator->services();
 
     $parameters->set(Option::CACHE_DIRECTORY, '.ecs_cache');
     $parameters->set(Option::INDENTATION, 'spaces');
@@ -56,4 +57,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer::class,    // Allow doc to comment
         PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class,
     ]);
+
+//    $services->set(EncodingFixer::class);
+//    $services->set(EmptyCommentSniff::class);
 };
