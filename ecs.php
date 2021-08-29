@@ -14,7 +14,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::CLEAN_CODE);
     $containerConfigurator->import(SetList::COMMON);
 //    $containerConfigurator->import(SetList::PSR_12);
-//    $containerConfigurator->import(SetList::PHP_CS_FIXER);
+    $containerConfigurator->import(SetList::PHP_CS_FIXER);
 
     $parameters = $containerConfigurator->parameters();
 
@@ -38,9 +38,22 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 //        PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer::class,            // Unnecessary tag checking
 //        PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer::class,                // Always use Single quote over Double
         PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer::class,
-        PhpCsFixer\Fixer\Whitespace\LineEndingFixer::class,
-        PhpCsFixer\Fixer\Whitespace\NoWhitespaceInBlankLineFixer::class,
-        PhpCsFixer\Fixer\Whitespace\SingleBlankLineAtEofFixer::class,
+        PhpCsFixer\Fixer\Whitespace\LineEndingFixer::class,                       // Skip, Always use LF for line ending
+        PhpCsFixer\Fixer\Whitespace\NoWhitespaceInBlankLineFixer::class,        // No whitespace in blank lines(end)
+        PhpCsFixer\Fixer\Whitespace\SingleBlankLineAtEofFixer::class,           // Always add a blank line at the eof
         Symplify\CodingStandard\Fixer\ArrayNotation\ArrayOpenerAndCloserNewlineFixer::class, // Skip for now
+
+        // Rule Set Skip from PHP_CS_FIXER
+        PhpCsFixer\Fixer\Basic\BracesFixer::class,
+        PhpCsFixer\Fixer\NamespaceNotation\BlankLineAfterNamespaceFixer::class,
+        PhpCsFixer\Fixer\Operator\IncrementStyleFixer::class,   // Disable post/pre increment checking
+        PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer::class,
+        PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer::class,
+        PhpCsFixer\Fixer\Phpdoc\AlignMultilineCommentFixer::class,
+        PhpCsFixer\Fixer\Phpdoc\NoBlankLinesAfterPhpdocFixer::class,
+        PhpCsFixer\Fixer\Phpdoc\PhpdocNoPackageFixer::class,    // Removes @package tag - Skip for now
+        PhpCsFixer\Fixer\Phpdoc\PhpdocSummaryFixer::class,      // Period at the end - Skip for now
+        PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer::class,    // Allow doc to comment
+        PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class,
     ]);
 };
