@@ -15,9 +15,9 @@ final class ArmstrongNumber
         $sumOfCubeOfDigits = \array_sum(
             \array_map(
                 static function (int $digit) use ($possibleArmstrongNumber) {
-                    return $digit ** \strlen((string)$possibleArmstrongNumber);
+                    return $digit ** \strlen((string) $possibleArmstrongNumber);
                 },
-                \str_split((string)$possibleArmstrongNumber)
+                \str_split((string) $possibleArmstrongNumber)
             )
         );
 
