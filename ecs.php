@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Fixer\Basic\EncodingFixer;
+use SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameAfterKeywordSniff;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
@@ -17,7 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 //    $containerConfigurator->import(SetList::PSR_12);
 
     $parameters = $containerConfigurator->parameters();
-//    $services = $containerConfigurator->services();
+    $services = $containerConfigurator->services();
 
     $parameters->set(Option::CACHE_DIRECTORY, '.ecs_cache');
     $parameters->set(Option::INDENTATION, 'spaces');
@@ -58,6 +61,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class,
     ]);
 
-//    $services->set(EncodingFixer::class);
-//    $services->set(EmptyCommentSniff::class);
+    $services->set(EncodingFixer::class);
+    $services->set(EmptyCommentSniff::class);
+    $services->set(FullyQualifiedClassNameAfterKeywordSniff::class);
 };
