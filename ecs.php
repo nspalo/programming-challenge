@@ -13,8 +13,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
      */
     $containerConfigurator->import(SetList::CLEAN_CODE);
     $containerConfigurator->import(SetList::COMMON);
-//    $containerConfigurator->import(SetList::PSR_12);
     $containerConfigurator->import(SetList::PHP_CS_FIXER);
+//    $containerConfigurator->import(SetList::PSR_12);
 
     $parameters = $containerConfigurator->parameters();
 
@@ -28,7 +28,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters->set(Option::SKIP, [
         // Rule Set Skip from COMMON
-        PhpCsFixer\Fixer\CastNotation\CastSpacesFixer::class,
+//        PhpCsFixer\Fixer\CastNotation\CastSpacesFixer::class,                   // Always add space after casting
         PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer::class,
         PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer::class,                  // I want to use Yoda - Skip for now
 //        PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer::class, // Always add comma at the end
@@ -39,8 +39,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 //        PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer::class,                // Always use Single quote over Double
         PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer::class,
         PhpCsFixer\Fixer\Whitespace\LineEndingFixer::class,                       // Skip, Always use LF for line ending
-        PhpCsFixer\Fixer\Whitespace\NoWhitespaceInBlankLineFixer::class,        // No whitespace in blank lines(end)
-        PhpCsFixer\Fixer\Whitespace\SingleBlankLineAtEofFixer::class,           // Always add a blank line at the eof
+        PhpCsFixer\Fixer\Whitespace\NoWhitespaceInBlankLineFixer::class,          // No whitespace in blank lines(end)
+        PhpCsFixer\Fixer\Whitespace\SingleBlankLineAtEofFixer::class,             // Always add a blank line at the eof
         Symplify\CodingStandard\Fixer\ArrayNotation\ArrayOpenerAndCloserNewlineFixer::class, // Skip for now
 
         // Rule Set Skip from PHP_CS_FIXER
