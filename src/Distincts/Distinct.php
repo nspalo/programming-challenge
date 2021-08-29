@@ -10,6 +10,9 @@ namespace ProgrammingChallenge\Distincts;
  */
 final class Distinct
 {
+    /**
+     * @param array<int> $numbers
+     */
     public function solution(array $numbers): int
     {
         // Array of distinct number
