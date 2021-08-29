@@ -33,12 +33,12 @@ final class Bracket
         if (0 === ($elements % 2)) {
             $bracketStacks = []; // will hold each element until pair is found.
             $bracketPairs = [    // open and close bracket pairs mapping
-                "(" => ")",
-                "[" => "]",
-                "{" => "}",
-                ")" => "(",
-                "]" => "[",
-                "}" => "{"
+                '(' => ')',
+                '[' => ']',
+                '{' => '}',
+                ')' => '(',
+                ']' => '[',
+                '}' => '{',
             ];
 
             // iterate through each element
